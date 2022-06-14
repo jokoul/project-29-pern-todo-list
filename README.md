@@ -9,3 +9,5 @@ this is a todo-list app made with PERN stack technology and allow you to organis
 Postgresql, Node.js, React.js,
 
 ## Launch
+
+https://pern-todo-list-joan.herokuapp.com/

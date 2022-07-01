@@ -80,10 +80,15 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
+//Catch all methods
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
+
 //Deployment with Heroku
 if (process.env.NODE_ENV === "production") {
   //we create a "build" folder in "client"
-  app.use(express.static("client/build"));
+  app.use(express.static("./client/build"));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
@@ -92,5 +97,5 @@ if (process.env.NODE_ENV === "production") {
 //listen to the port
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  console.log("server has started on port 5000.");
+  console.log(`server has started on port ${port}.`);
 });

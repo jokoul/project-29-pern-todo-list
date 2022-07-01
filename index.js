@@ -6,8 +6,8 @@ const path = require("path");
 require("dotenv").config();
 
 //middleware
-app.use(cors()); // to set cors that allow program from different domain to connect each other.
 app.use(express.json()); //allow to give access to request and transform the body to json data.
+app.use(cors()); // to set cors that allow program from different domain to connect each other.
 
 //ROUTES
 

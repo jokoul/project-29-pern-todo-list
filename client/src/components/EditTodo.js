@@ -14,7 +14,7 @@ const EditTodo = ({ todo }) => {
       //Proxy
 
       const updateTodo = await fetch(
-        `http://localhost:5000/todos/${todo.todo_id}`, //we remove "http://localhost:5000" before "todos" because we use proxy in package json
+        `/todos/${todo.todo_id}`, //we remove "http://localhost:5000" before "todos" because we use proxy in package json
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

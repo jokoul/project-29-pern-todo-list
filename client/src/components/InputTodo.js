@@ -7,7 +7,7 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch("http://localhost:5000/todos", {
+      const response = await fetch("/todos", {
         //we remove "http://localhost:5000" before "todos" because we use proxy in package json
         //"proxy": "http://localhost:5000"
         method: "POST",

@@ -6,8 +6,8 @@ const path = require("path");
 require("dotenv").config();
 
 //middleware
-app.use(express.json()); //allow to give access to request and transform the body to json data.
 app.use(cors()); // to set cors that allow program from different domain to connect each other.
+app.use(express.json()); //allow to give access to request and transform the body to json data.
 
 //ROUTES
 
@@ -80,10 +80,10 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
-//Catch all methods
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build/index.html"));
-});
+// //Catch all methods
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client/build/index.html"));
+// });
 
 //Deployment with Heroku
 if (process.env.NODE_ENV === "production") {

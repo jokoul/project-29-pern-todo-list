@@ -8,7 +8,7 @@ export default function ListTodos() {
   //delete todo function
   const deleteTodo = async (id) => {
     try {
-      const deleteTodo = await fetch(`/todos/${id}`, {
+      const deleteTodo = await fetch(`http://localhost:5000/todos/${id}`, {
         //we remove "http://localhost:5000" before "todos" because we use proxy in package json
         method: "DELETE",
       });

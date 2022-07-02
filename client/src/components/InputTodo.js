@@ -7,14 +7,15 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch("/todos", {
+      const response = await fetch("http://localhost:5000/todos", {
         //we remove "http://localhost:5000" before "todos" because we use proxy in package json
+        //"proxy": "http://localhost:5000"
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
       //update todo list
-      window.location = "/"; //relod more than default reload
+      window.location = "/"; //reload more than default reload
       //   console.log(response);
     } catch (error) {
       console.error(error.message);
